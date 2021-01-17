@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>HappieBot</title>
+
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static',filename='png/bot5.png')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/common.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/modern.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/fontawesome.min.css')}}">
+    <script src="{{ url_for('static',filename='js/flex-polyfill.js')}}"></script>
+  </head>
+
+  <body>
+    <div class="video-bg" id="video-bg" style="display: none;">
+      <video autoplay muted loop>
+        <source src="" type="video/mp4" />
+      </video>
+      <div class="overlay"></div>
+    </div>
+
+    <div class="wrapper row">
+      <div class="column column-50 background justify-end">
+        <div class="content-wrap" style="padding: 0px">
+          <div class="content-overlay"></div>
+          <h1 class=" title " id="title" style="text-align:center;">Happie Bot</h1>
+          <h3 class=" subtitle " id="subtitle">
+
+          </h3>
+          <div id="show-social" class=" social "></div>
+        </div>
+      </div>
+      <div class="column column-50 right-content">
+        <div class="row justify-center">
+          <div class=" logo " id="logo-wrapper"></div>
+        </div>
+        <div id="root">
+          <div class="fullpage">
+
+            <div class="header-wrapper">
+              <button type="button" class="restart-launcher" id="refresh-button"></button>
+              <progress class="progress-bar" value="5" max="14"></progress>
+            </div>
+
+            <div class="fixed-height" id="chatbox-container" style="margin: 50px 0px 85px 0px; padding: 0px;">
+              <ul class="chatbox media-list conversation-part--animation " style="padding-top: 0px; margin-bottom: 0px;">
+                  <li class="conversation-part conversation-part--animation conversation-part--question" id="waiting"><div class="avatar-wrapper same-row"><div class="avatar"></div></div><div class="same-row question-part"><div class="bubble no-border bubble-loader-wrapper"><div class="bubble-loader"></div><div class="bubble-loader"></div><div class="bubble-loader"></div></div></div></li>
+              </ul>
+            <div class="chat-buttons"></div>
+          </div>
+          <div class="composer" style="margin-bottom: 20px">
+              <pre class="send-button" id="chatbot-form-btn"></pre>
+              <textarea id="textInput" class="" placeholder="Type an answer"></textarea>
+            </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="{{ url_for('static',filename='js/chatbot.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/chatbot_predict.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/common.js')}}"></script>
+  </body>
+</html>
